@@ -1,0 +1,54 @@
+/* @import url('https://fonts.googleapis.com/css?family=Kirang+Haerang'); */
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.glitch {
+    position: relative;
+    height: 100vh;
+    /* background-image: url('https://i.imgur.com/PHnvcrd.jpg'); */
+    background-image: url('https://i.pinimg.com/originals/35/86/b3/3586b309296d5cec634d1fe88bef1085.jpg');
+    background-size: cover;
+}
+
+.glitch:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url('https://i.imgur.com/PHnvcrd.jpg'); */
+    background-image: url('https://i.pinimg.com/originals/35/86/b3/3586b309296d5cec634d1fe88bef1085.jpg');
+    background-position: 7px 0;
+    opacity: 0.7;
+}
+
+.glitch>p {
+    font-size: 7rem;
+    color: #d4d4d4;
+    -webkit-text-stroke: 4px #1b1b1b;
+    position: relative;
+    top: 30%;
+    text-align: center;
+    /* font-family: 'Kirang Haerang', cursive; */
+    font-family: 'Lacquer', system-ui;
+}
+
+.glitch>form {
+    height: 10%;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    top: 35%;
+    text-align: center;
+}
+
+.glitch>form>input {
+    height: 100%;
+    width: 80%;
+    font-size: 40pt;
+}
