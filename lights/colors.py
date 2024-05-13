@@ -4,7 +4,6 @@ from string import ascii_uppercase
 from typing import Iterator
 
 import numpy as np
-
 from coords import CoordsType
 from letter_to_light_map import lights_index
 
@@ -33,6 +32,7 @@ def random_lights_color(n_lights: int) -> list[ColorType]:
 
 def blink_to_message(coords: CoordsType, message: str) -> Iterator[list[ColorType]]:
     base_colors = random_lights_color(coords.shape[1])
+    message = message.upper()
     all_off: list[ColorType] = [(0, 0, 0) for _ in range(len(base_colors))]
     for letter in message:
         led_colors = all_off.copy()
