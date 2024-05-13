@@ -8,5 +8,6 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY . /app
 
-ENTRYPOINT ["python3", "-u"]
-CMD ["app.py"]
+ENV PYTHONUNBUFFERED 1
+
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
