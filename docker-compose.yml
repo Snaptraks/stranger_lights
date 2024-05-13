@@ -2,8 +2,21 @@ services:
   webpage:
     build: ./webpage
     image: lights-web:latest
+    container_name: lights-webpage
     # flask requires SIGINT to stop gracefully
     # (default stop signal from Compose is SIGTERM)
     stop_signal: SIGINT
     ports:
       - "80:8000"
+    volumes:
+      - "messages:/app/messages"
+
+  lights:
+    build: ./lights
+    image: lights:latest
+    container_name: lights-control
+    volumes:
+      - "messages:/app/messages"
+
+volumes:
+  messages:
