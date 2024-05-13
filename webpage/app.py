@@ -1,8 +1,15 @@
 import re
+from pathlib import Path
 
 from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
+MESSAGE_FILE = Path(__file__).parent / "messages/messages.txt"
+
+
+def save_message_to_file(message: str) -> None:
+    with open(MESSAGE_FILE, "a") as f:
+        f.write(f"{message}\n")
 
 
 @app.route("/")
@@ -15,7 +22,8 @@ def send_message_post():
     text = request.form["message"]
     if text:
         processed_text = re.sub(r"[^a-z-A-Z ]+", "", text)
-        print(processed_text)
+        save_message_to_file(processed_text)
+
     return redirect(url_for("send_message"))
 
 
