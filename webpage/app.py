@@ -1,9 +1,14 @@
+import os
 import re
 from pathlib import Path
 
-from flask import Flask, redirect, render_template, request, url_for
+from dotenv import load_dotenv
+from flask import Flask, flash, redirect, render_template, request, url_for
+
+load_dotenv()
 
 app = Flask(__name__)
+app.secret_key = os.environ["SECRET_KEY"]
 MESSAGE_FILE = Path(__file__).parent / "messages/messages.txt"
 
 
@@ -21,8 +26,10 @@ def send_message():
 def send_message_post():
     text = request.form["message"]
     if text:
+        # remove non-letter characters
         processed_text = re.sub(r"[^a-z-A-Z ]+", "", text)
         save_message_to_file(processed_text)
+        flash("Message sent!")
 
     return redirect(url_for("send_message"))
 

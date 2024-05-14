@@ -9,16 +9,28 @@
 
 <body>
     <div class="glitch">
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <ul>
+            <li>
+                {{message}}
+            </li>
+        </ul>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
         <p>
             ENTER A MESSAGE
         </p>
+
         <form method="POST">
             <input type="text" name="message" autofocus="autofocus">
             <input type="submit" value="DISPLAY">
         </form>
     </div>
-
-
 </body>
 
 </html>
