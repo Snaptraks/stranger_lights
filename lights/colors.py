@@ -50,13 +50,13 @@ def color_wave(coords: CoordsType) -> Iterator[list[ColorType]]:
     base_colors = random_lights_color(coords.shape[1])
 
     def func(x, y, t) -> ColorType:
-        # return np.exp(-((x - t) ** 2))
-        return 0.5 * (np.sin(4 * (x - t)) + 1)
+        return np.exp(-((x - t) ** 2))
+        # return 0.5 * (np.sin(4 * (x - t)) + 1)
 
-    t = 0
-    dt = 0.4
+    t = -5
+    dt = 0.2
 
-    while True:
+    while t < 5:
         masks = func(coords[0], coords[1], t)
         yield [
             tuple(c * mask for c in color) for color, mask in zip(base_colors, masks)

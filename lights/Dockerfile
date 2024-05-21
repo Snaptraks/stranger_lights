@@ -1,7 +1,10 @@
-FROM python:3.11-alpine
+FROM python:3.11-slim
 
-RUN apk update \
-    && apk add --no-cache gcc
+# RUN apk update \
+#     && apk add --no-cache gcc
+RUN apt update \
+    && apt install -y gcc \
+    && rm -rf /vat/lib/apt/lists/*
 
 WORKDIR /app
 
