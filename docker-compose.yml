@@ -15,6 +15,7 @@ services:
     build: ./lights
     image: lights:latest
     container_name: lights-control
+    privileged: true
     volumes:
       - "messages:/app/messages"
 
