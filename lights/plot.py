@@ -58,7 +58,7 @@ def main() -> None:
     # coords = load_coords("coords_line.csv")
     coords = load_coords("stranger_things_lights_coords.csv")
 
-    animate(coords, message="tu pues")
+    animate(coords, message="hello world")
 
 
 if __name__ == "__main__":
