@@ -68,7 +68,7 @@ def pop_message_from_file() -> str | None:
 
 
 def main() -> None:
-    coords = load_coords(ROOT_PATH / "coords_line.csv")
+    coords = load_coords(ROOT_PATH / "stranger_lights.csv")
 
     while True:
         message = pop_message_from_file()

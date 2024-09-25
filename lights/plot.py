@@ -1,6 +1,6 @@
 from string import ascii_uppercase
 
-from colors import ColorType, blink_to_message, color_wave
+from colors import ColorType, blink_to_message
 from coords import CoordsType, load_coords
 from letter_to_light_map import lights_index
 from matplotlib import animation
@@ -56,7 +56,7 @@ def animate(coords: CoordsType, message: str):
 
 def main() -> None:
     # coords = load_coords("coords_line.csv")
-    coords = load_coords("stranger_things_lights_coords.csv")
+    coords = load_coords("stranger_lights.csv")
 
     animate(coords, message="hello world")
 
