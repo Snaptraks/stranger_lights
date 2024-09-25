@@ -1,6 +1,7 @@
 from random import choice
 
 default_messages: list[str] = [
+    # Stranget Things theme
     "he is coming",
     "he is here",
     "help me",
@@ -15,6 +16,10 @@ default_messages: list[str] = [
     "right here",
     "so cold",
     "so scared",
+    # Halloween theme
+    "happy halloween",
+    "joyeuse halloween",
+    "boo",
 ]
 
 
