@@ -37,7 +37,7 @@ def blink_to_message(coords: CoordsType, message: str) -> Iterator[list[ColorTyp
     for letter in message:
         led_colors = all_off.copy()
         if letter in ascii_uppercase:
-            letter_index = lights_index[ascii_uppercase.index(letter)]
+            letter_index = lights_index[letter]
             led_colors[letter_index] = base_colors[letter_index]
 
         yield led_colors
