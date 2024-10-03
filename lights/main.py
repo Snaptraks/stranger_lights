@@ -14,7 +14,7 @@ N_PIXELS: int = 50
 pixels = neopixel.NeoPixel(
     board.D21,  # type: ignore
     n=N_PIXELS,
-    brightness=0.4,
+    brightness=0.8,
     pixel_order=neopixel.RGB,
     auto_write=False,
 )
@@ -36,7 +36,7 @@ def run_message(coords: CoordsType, message: str) -> None:
             pixels[p] = make_color_int(c)
 
         pixels.show()
-        time.sleep(0.5)
+        time.sleep(1.5)
 
 
 def run_color_wave(coords: CoordsType) -> None:
@@ -84,7 +84,7 @@ def main() -> None:
         run_color_wave(coords)
         clear_pixels()
 
-        time.sleep(2)
+        time.sleep(2.5)
 
 
 if __name__ == "__main__":
